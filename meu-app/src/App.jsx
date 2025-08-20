@@ -1,7 +1,7 @@
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './styles/global.scss'
-import { counter } from './componentes/counter'
+import  Counter  from './componentes/counter'
 
 function App() {
   
@@ -18,8 +18,8 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <counter/>
         <p>
+        <Counter></Counter><br/>
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
       </div>
