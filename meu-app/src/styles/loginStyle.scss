@@ -2,3 +2,74 @@ body{
     background-color: #ffffff;
 }
 
+.imagemDoCantoEsquerdoDaTelaDeLogin{
+    width: 146px;
+    height: 146px;
+    top: -16px;
+    left: 17px;
+}
+
+.telaLogin{
+    padding: 8, 16, 8, 16;
+}
+
+h1{
+    color: black;
+}
+
+.meu{
+    color: blue;
+}
+
+.gestor{
+    color: rgb(23, 23, 68);
+}
+
+.facaSeuLoginEm{
+    width: 462px;
+    height: 75px;
+    top: 294px;
+    left: 175px;
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: 50px;
+    leading-trim: NONE;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+
+.meuGestor{
+    width: 396px;
+    height: 53px;
+    top: 374px;
+    left: 175px;
+    font-family: Poppins;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 35px;
+    leading-trim: NONE;
+    line-height: 100%;
+    letter-spacing: 0%;
+
+}
+.voceNaoPodeSeRegistrarAqui{
+    width: 308;
+    height: 54;
+    angle: 0 deg;
+    opacity: 1;
+    top: 480px;
+    left: 179px;
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: 16px;
+    leading-trim: NONE;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+.vocePodeSe{
+    color: black;
+}
+
+.registrarAqui{
+    color: blue;
+}
