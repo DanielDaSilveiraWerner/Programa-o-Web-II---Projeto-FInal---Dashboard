@@ -4,7 +4,7 @@ import { loginAndGetUser } from "../services/auth";
 import meuGestor from "../assets/logo.svg"
 import { useNavigate } from "react-router-dom";
 
-function Login (){
+export function Login (){
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
     const [error, setError] = useState(null);
@@ -29,11 +29,11 @@ function Login (){
         }
     }   
 
-   
     return (  
         <div className="telaLogin"> 
             <div>
             <img src={meuGestor} alt="Meu Gestor" className="imagemDoCantoEsquerdoDaTelaDeLogin"/>
+                <div className="card_texto_e_imagem_pessoa">
                 <h1 className="facaSeuLoginEm">
                     Faça seu login em 
                 </h1>
@@ -44,7 +44,6 @@ function Login (){
                    <span className="vocePodeSe" >Se você ainda não tem uma conta. </span><br/>
                 <span className="vocePodeSe"> Você pode se </span> <span class="registrarAqui">Registrar aqui !</span> 
                 </p>
-                <div>
                     <div>
                         <div>
                             <form onSubmit={handleSubmite}>
@@ -77,5 +76,3 @@ function Login (){
     </div>          
         ) 
 }
-
-export default Login;

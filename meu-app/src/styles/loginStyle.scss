@@ -1,17 +1,24 @@
 body{
     background-color: #ffffff;
 }
-
-.imagemDoCantoEsquerdoDaTelaDeLogin{
-    width: 146px;
-    height: 146px;
-    top: -16px;
-    left: 17px;
-}
-
 .telaLogin{
     padding: 8, 16, 8, 16;
+    position: relative;
+    min-height: 100vh;
 }
+.imagemDoCantoEsquerdoDaTelaDeLogin{
+    width: 200px;
+    height: 200;
+    angle: 0 deg;
+    opacity: 1;
+    top: -40px;
+    left: -600px;    
+    position: absolute;
+    z-index: 50;
+    cursor: default;
+}
+
+
 
 h1{
     color: black;
