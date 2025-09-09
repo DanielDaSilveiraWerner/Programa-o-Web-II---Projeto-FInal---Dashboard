@@ -16,7 +16,7 @@ export function Login() {
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
 
-    const navigate = useNavigate;
+     const navigate = useNavigate();
 
     async function handleSubmite(e) {
         e.preventDefault();
@@ -83,9 +83,8 @@ export function Login() {
                     <p className="areaDeLogin__PSenha">
                         Esqueceu sua senha? 
                     </p>
-
-
-                    <button type='submit'
+                    <button
+                     type='submit'
                         disabled={loading}
                         className="button button --primary"
                     >{loading ? "Entrando..." : "Login"}</button>
