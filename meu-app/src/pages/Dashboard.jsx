@@ -2,18 +2,19 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import '../styles/dashboard.scss'
 import meuGestor from "../assets/logo.svg";
+import gremio from "../assets/grêmioFoto.png"
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { logout } from '../services/auth';
 
-export function Dashboard() {
-  const [emailUsuario, setUsuarioEmail] = useState("");
+export function Dashboard({ children }) {
+  const [nomeUsuario, setUsuarioEmail] = useState("");
   const navigate = useNavigate();
 
   useEffect(()=>{
-    const email = sessionStorage.getItem("setUsuarioEmail");
-    if(email){
-      setUsuarioEmail(email);
+    const user = JSON.parse(sessionStorage.getItem("user"));
+    if(user){
+      setUsuarioEmail(user.name);
     }
   },[]);
 
@@ -25,7 +26,6 @@ export function Dashboard() {
   function levarAProducts(){
     navigate("/products")
   }
-
 
   return (
     <div className="d-flex">
@@ -50,17 +50,16 @@ export function Dashboard() {
           <hr />
           <h4>Outros</h4>
           <li className="nav-item">
-            <a className="nav-link  " href="#">Configurações</a>
+            <a className="nav-link" href="#">Configurações</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link  " href="#">Usuários</a>
+            <a className="nav-link" href="#">Usuários</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link  " href="#">Empresas</a>
+            <a className="nav-link" href="#">Empresas</a>
           </li>
           <li className="nav-item">
             <a className="nav-link" href="#" onClick={sair}>Sair</a>
-
           </li>
         </ul>
       </div>
@@ -72,12 +71,13 @@ export function Dashboard() {
         
         <nav className="navbar navbar-light bg-white border-bottom px-3" style={{height: "85px"}}>
         <span className="me-03">Olá, {emailUsuario}</span>
+        <img src={gremio} alt="imagemGremio" className='imagemGremio'/>
           <form className="d-flex justify-content-start formPesquisar">
             <input className="form-control me-5" type="search" placeholder="Pesquisar..." />
           </form>
-          
         </nav>
       </div>
     </div>
   );
 }
+

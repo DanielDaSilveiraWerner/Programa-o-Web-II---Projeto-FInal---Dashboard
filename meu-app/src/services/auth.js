@@ -12,7 +12,7 @@ export async function loginAndGetUser ({ email, password}){
     let user = partialUser;
     if (user.id == null){
         const { data:users} = await api.get(
-            '/users?email=${encodeURIComponent(email)}'
+            `/users?email=${encodeURIComponent(email)}`
         );
         user = users?.[0] || partialUser;
     }

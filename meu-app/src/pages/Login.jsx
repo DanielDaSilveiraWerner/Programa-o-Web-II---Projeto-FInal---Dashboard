@@ -20,7 +20,6 @@ export function Login() {
 
     async function handleSubmite(e) {
         e.preventDefault();
-        sessionStorage.setItem("setUsuarioEmail", email)
         if (!email.trim() || !senha.trim()) {
             setError("Preencha todos os campos!");
             return;
