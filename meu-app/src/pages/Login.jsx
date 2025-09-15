@@ -1,5 +1,7 @@
 import { use, useState } from "react";
 import "../styles/loginStyle.scss";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import meuGestor from "../assets/logo.svg";
 import pessoaCelulcar from "../assets/saly-14.svg";
 import google from "../assets/google.svg";
@@ -7,8 +9,6 @@ import apple from "../assets/apple.svg";
 import facebook from "../assets/Facebook.svg";
 import { loginAndGetUser } from "../services/auth";
 import { useNavigate } from "react-router-dom";
-
-
 
 export function Login() {
     const [email, setEmail] = useState('');
@@ -20,6 +20,7 @@ export function Login() {
 
     async function handleSubmite(e) {
         e.preventDefault();
+        sessionStorage.setItem("setUsuarioEmail", email)
         if (!email.trim() || !senha.trim()) {
             setError("Preencha todos os campos!");
             return;
@@ -38,6 +39,7 @@ export function Login() {
     }
 
     return (
+        <body className="bodyLogin">
         <div className="telaLogin">
             {/* <!-- Div Pai/Principal --> */}
             <div className="imagemCanto">{/* Div filha do pai, que representa a imagem do canto esquerdo da tela de login */}
@@ -69,7 +71,8 @@ export function Login() {
                         placeholder='    E-mail'
                         name='email'
                         value={email}
-                        onChange={(o) => setEmail(o.target.value)} />
+                        onChange={(o) => setEmail(o.target.value)} 
+                        />
                         <br /><br />
                     <input
                         className="areaDeLogin__inputSenha"
@@ -98,6 +101,7 @@ export function Login() {
                 </form>
             </div>
         </div>
+        </body>
     )
 }
 

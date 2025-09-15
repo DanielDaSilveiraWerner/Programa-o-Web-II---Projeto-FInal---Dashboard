@@ -6,6 +6,8 @@ export async function loginAndGetUser ({ email, password}){
     const partialUser = data.user || {};
 
     localStorage.setItem("token", token);
+    sessionStorage.setItem("token", token);
+
 
     let user = partialUser;
     if (user.id == null){
@@ -15,10 +17,13 @@ export async function loginAndGetUser ({ email, password}){
         user = users?.[0] || partialUser;
     }
     localStorage.setItem("user", JSON.stringify(user));
+    sessionStorage.setItem("user", JSON.stringify(user));
     return {token, user};
 }
 
 export function logout(){
     localStorage.removeItem("token");
     localStorage.removeItem("user");
+    sessionStorage.removeItem("token");
+    sessionStorage.removeItem("user")
 }
