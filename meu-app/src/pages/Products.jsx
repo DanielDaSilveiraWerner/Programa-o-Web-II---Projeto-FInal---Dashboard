@@ -1,7 +1,38 @@
-import { use, useState } from "react";
-import { api } from "../api";
+// import { use, useEffect, useState } from "react";
+// import { api } from "../api";
+// import { Layout } from "../components/Layout";
 
 
-<h1>
-    Hello!
-</h1>
+// export function Products(){
+//     const [produtos, setProdutos] = useState([]);
+
+//     useEffect(()=>{
+//         async function name(params) {
+            
+//         }
+//     })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//     return (
+//         <Layout>
+
+//         </Layout>
+//     )
+// }
